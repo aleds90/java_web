@@ -70,10 +70,10 @@ public class MerceDAO extends DAO implements DAOInterface {
 
         PreparedStatement pStatement             = this.getConnection().prepareStatement(SELECT_SQL);
         ResultSet resultSet                      = pStatement.executeQuery();
-        ArrayList<Object> merceList              = new ArrayList<>();
-        ArrayList<String> tipoMerceList          = new ArrayList<>();
-        ArrayList<Integer> quantitativoMerceList = new ArrayList<>();
-        ArrayList<Integer> pesoLordoList         = new ArrayList<>();
+        ArrayList<Object> merceList              = new ArrayList<Object>();
+        ArrayList<String> tipoMerceList          = new ArrayList<String>();
+        ArrayList<Integer> quantitativoMerceList = new ArrayList<Integer>();
+        ArrayList<Integer> pesoLordoList         = new ArrayList<Integer>();
 
         while ( resultSet.next()) {
             tipoMerceList.add(resultSet.getString(1));

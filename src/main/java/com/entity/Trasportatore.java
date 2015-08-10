@@ -1,11 +1,6 @@
 package main.java.com.entity;
 
-import sun.util.calendar.CalendarDate;
-import sun.util.resources.CalendarData;
 
-import javax.print.attribute.standard.DateTimeAtCompleted;
-import java.sql.Timestamp;
-import java.util.Date;
 
 public class Trasportatore {
 

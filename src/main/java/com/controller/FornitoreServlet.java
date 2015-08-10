@@ -30,12 +30,14 @@ public class FornitoreServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
         try {
             //Integer id = (Integer)request.getAttribute("id");
 
             FornitoreDAO fornitoreDAO = new FornitoreDAO();
             Fornitore fornitore = fornitoreDAO.getbyid(1);
             request.setAttribute("fornitore", fornitore);
+            System.out.print(fornitore.getNomeFornitore());
         }
         catch (SQLException e){
             System.out.println(e.getMessage());
@@ -45,7 +47,5 @@ public class FornitoreServlet extends HttpServlet {
         }
 
         jsp.forward(request, response);
-
-
     }
 }

@@ -1,2 +1,11 @@
 .idea
+.gradle
 out
+build.gradle
+gradlew
+gradlew.bat
+LICENSE
+README.md
+build
+classes
+src/config.properties

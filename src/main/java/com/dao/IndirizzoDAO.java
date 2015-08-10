@@ -72,9 +72,9 @@ public class IndirizzoDAO extends DAO implements DAOInterface {
         ResultSet resultSet = pStatement.executeQuery();
         //pStatement.close();
         ArrayList<Object> indirizzoList = new ArrayList();
-        ArrayList<String> viaList = new ArrayList<>();
-        ArrayList<Object> capList = new ArrayList<>();
-        ArrayList<String> cittaList = new ArrayList<>();
+        ArrayList<String> viaList = new ArrayList<String>();
+        ArrayList<Object> capList = new ArrayList<Object>();
+        ArrayList<String> cittaList = new ArrayList<String>();
         while (resultSet.next()) {
             viaList.add(resultSet.getString(1));
             capList.add(resultSet.getInt(2));
