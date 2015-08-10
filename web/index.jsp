@@ -11,7 +11,7 @@
     <title></title>
   </head>
   <body>
-
+    <a href="fornitore?id=1">Lista Fornitori</a>
 
   </body>
 </html>

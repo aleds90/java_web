@@ -13,7 +13,7 @@ public class FornitoreTest {
 
         try {
             FornitoreDAO fornitoreDAO = new FornitoreDAO();
-            Fornitore fornitore = fornitoreDAO.getbyid(1);
+            Fornitore fornitore = fornitoreDAO.getbyid(2);
             System.out.println(fornitore.getNomeFornitore());
         }
         catch (SQLException e){

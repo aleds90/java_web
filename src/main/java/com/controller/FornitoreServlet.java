@@ -32,12 +32,11 @@ public class FornitoreServlet extends HttpServlet {
 
 
         try {
-            //Integer id = (Integer)request.getAttribute("id");
+            Integer id = (Integer)request.getAttribute("id");
 
             FornitoreDAO fornitoreDAO = new FornitoreDAO();
-            Fornitore fornitore = fornitoreDAO.getbyid(1);
+            Fornitore fornitore = fornitoreDAO.getbyid(id);
             request.setAttribute("fornitore", fornitore);
-            System.out.print(fornitore.getNomeFornitore());
         }
         catch (SQLException e){
             System.out.println(e.getMessage());
