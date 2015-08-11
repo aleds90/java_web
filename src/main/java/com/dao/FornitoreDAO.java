@@ -12,9 +12,9 @@ import java.util.ArrayList;
 
 public class FornitoreDAO extends DAO implements DAOInterface {
 
-    private static final String INSERT_SQL = "INSERT INTO tblFornitore (nomeFornitore, partitaIvaFornitore) VALUES (?, ?)";
+    private static final String INSERT_SQL = "INSERT INTO tblfornitore (nomeFornitore, partitaIvaFornitore) VALUES (?, ?)";
     private static final String SELECT_SQL = "SELECT NameFornitore FROM Fornitore WHERE 1";
-    private static final String SELECT_BY_ID = "SELECT * FROM tblFornitore WHERE idFornitore=(?)";
+    private static final String SELECT_BY_ID = "SELECT * FROM tblfornitore WHERE idFornitore=(?)";
     private static final String SELECT_SQ_BY_NAME = "";
 
 

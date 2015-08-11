@@ -12,6 +12,18 @@ public class FornitoreTest {
     public static void main(String args[]){
 
         try {
+
+
+
+
+                Fornitore f = new Fornitore();
+                f.setNameFornitore("ale");
+                f.setPartitaIva(1);
+                FornitoreDAO dao = new FornitoreDAO();
+                dao.insert(f);
+
+
+
             FornitoreDAO fornitoreDAO = new FornitoreDAO();
             Fornitore fornitore = fornitoreDAO.getbyid(2);
             System.out.println(fornitore.getNomeFornitore());

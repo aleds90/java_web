@@ -1,5 +1,6 @@
 package main.java.com.controller;
 
+
 import main.java.com.dao.FornitoreDAO;
 import main.java.com.entity.Fornitore;
 
@@ -13,40 +14,39 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-/**
- * Created by Alessandro on 09/08/2015.
- */
-public class FornitoreServlet extends HttpServlet {
+public class InsertFornitoreServlet extends HttpServlet{
 
     private RequestDispatcher jsp;
 
     public void init(ServletConfig config) throws ServletException {
         ServletContext context = config.getServletContext();
 
-        jsp = context.getRequestDispatcher("/WEB-INF/jsp/fornitore.jsp");
+        jsp = context.getRequestDispatcher("/WEB-INF/jsp/insertFornitore.jsp");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-    }
+        String nome = request.getParameter("nomeFornitore");
+        Integer piva = Integer.parseInt(request.getParameter("partitaIvaFornitore"));
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try{
 
+            Fornitore f = new Fornitore();
+            f.setNameFornitore(nome);
+            f.setPartitaIva(piva);
+            FornitoreDAO dao = new FornitoreDAO();
+            dao.insert(f);
 
-        try {
-            Integer id = (Integer)request.getAttribute("id");
+        }catch (SQLException e){
+            request.setAttribute("error", e.getMessage());
 
-            FornitoreDAO fornitoreDAO = new FornitoreDAO();
-            Fornitore fornitore = fornitoreDAO.getbyid(1);
-            request.setAttribute("fornitore", fornitore);
-        }
-        catch (SQLException e){
-            System.out.println(e.getMessage());
-
-        }catch (Exception e){
-            System.out.print(e.getMessage());
         }
 
         jsp.forward(request, response);
     }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        jsp.forward(request, response);
+    }
+
 }
